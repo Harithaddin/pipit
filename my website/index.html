@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipit Patisserie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Pipit Patisserie</div>
+    <ul>
+      <li><a href="#red-velvet">Red Velvet</a></li>
+      <li><a href="#lemon-tart">Lemon Tart</a></li>
+      <li><a href="#vanilla-cake">Vanilla Cake</a></li>
+      <li><a href="#chocolate-fudge">Chocolate Fudge</a></li>
+    </ul>
+  </nav>
+
+  <!-- Slider Section -->
+  <div class="slider">
+    <div class="slides">
+      <a href="#red-velvet" class="slide-item">
+        <img src="images/red_velvet.png" alt="Red Velvet Cake">
+        <div class="caption-overlay">Red Velvet Cake</div>
+        <div class="price-overlay">RM 50</div>
+      </a>
+      <a href="#lemon-tart" class="slide-item">
+        <img src="images/lemon_tart.png" alt="Lemon Tart">
+        <div class="caption-overlay">Lemon Tart</div>
+        <div class="price-overlay">RM 40</div>
+      </a>
+      <a href="#vanilla-cake" class="slide-item">
+        <img src="images/vanilla_cake.png" alt="Vanilla Cake">
+        <div class="caption-overlay">Vanilla Cake</div>
+        <div class="price-overlay">RM 45</div>
+      </a>
+      <a href="#chocolate-fudge" class="slide-item">
+        <img src="images/chocolate_cake.png" alt="Chocolate Fudge">
+        <div class="caption-overlay">Chocolate Fudge</div>
+        <div class="price-overlay">RM 55</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Cake Details Sections -->
+  <div id="cakes">
+
+    <div class="cake-full" id="red-velvet">
+      <div class="cake-image">
+        <img src="images/red_velvet.png" alt="Red Velvet Cake">
+      </div>
+      <div class="cake-details">
+        <h2>Red Velvet Cake</h2>
+        <p>A luxurious, multi-layered cake with a vibrant red cocoa-vanilla sponge, beautifully complemented by a silky, tangy cream cheese frosting.</p>
+        <p class="price">Price: RM 50</p>
+        <button onclick="openModal()">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="cake-full" id="lemon-tart">
+      <div class="cake-image">
+        <img src="images/lemon_tart.png" alt="Lemon Tart">
+      </div>
+      <div class="cake-details">
+        <h2>Lemon Tart</h2>
+        <p>A buttery, crumbly tart shell filled with vibrant, smooth lemon curd, offering a perfect balance of tartness and sweetness.</p>
+        <p class="price">Price: RM 40</p>
+        <button onclick="openModal()">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="cake-full" id="vanilla-cake">
+      <div class="cake-image">
+        <img src="images/vanilla_cake.png" alt="Vanilla Cake">
+      </div>
+      <div class="cake-details">
+        <h2>Vanilla Cake</h2>
+        <p>A classic sponge cake renowned for its light, airy texture and pure, comforting vanilla flavor.</p>
+        <p class="price">Price: RM 45</p>
+        <button onclick="openModal()">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="cake-full" id="chocolate-fudge">
+      <div class="cake-image">
+        <img src="images/chocolate_cake.png" alt="Chocolate Fudge Cake">
+      </div>
+      <div class="cake-details">
+        <h2>Chocolate Fudge Cake</h2>
+        <p>Decadently rich and deeply chocolatey, this dense fudge cake features layers of moist, dark chocolate sponge with thick, smooth chocolate ganache.</p>
+        <p class="price">Price: RM 55</p>
+        <button onclick="openModal()">Buy Now</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2>Complete Your Order</h2>
+      <form action="data.php" method="POST">
+        <input type="text" name="customer_name" placeholder="Your Full Name" required>
+        <input type="tel" name="phone_number" placeholder="Phone Number" required maxlength="15">
+        <input type="text" name="card_number" placeholder="Card Number" required maxlength="16" pattern="[0-9]{16}">
+        <input type="text" name="cvv" placeholder="CVV" required maxlength="3" pattern="[0-9]{3}">
+        <input type="text" name="exp_date" placeholder="Expiration Date (MM/YY)" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
+        <input type="text" name="address" placeholder="Your Delivery Address" required>
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑</button>
+
+  <!-- Admin Page Link -->
+  <a href="admin.php" id="adminBtn" title="Admin Dashboard">Admin</a>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p><strong>Location:</strong> No. 22, Jalan Patisserie, 43000 Kajang, Selangor</p>
+      <p><strong>Email:</strong> hello@pipitpatisserie.com</p>
+      <p><strong>Telephone:</strong> +60 12-345 6789</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

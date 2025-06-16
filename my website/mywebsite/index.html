@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pipit Patisserie</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Pipit Patisserie</h1>
+    <p>Crafted Cakes for Every Moment</p>
+  </header>
+
+  <div class="carousel">
+    <div class="slides" id="slideWrapper">
+      <div class="slide"><img src="images/red_velvet.jpg" alt="Red Velvet Cake" onclick="showCake('cake1')"></div>
+      <div class="slide"><img src="images/lemon_tart.jfif" alt="Lemon Tart" onclick="showCake('cake2')"></div>
+      <div class="slide"><img src="images/vanilla_cake.jpg" alt="Vanilla Cake" onclick="showCake('cake3')"></div>
+      <div class="slide"><img src="images/chocolate_fudge.jpg" alt="Chocolate Fudge" onclick="showCake('cake4')"></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Our Cakes</h2>
+  <div class="product-grid" id="cakeGrid"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

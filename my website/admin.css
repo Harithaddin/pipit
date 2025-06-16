@@ -1,0 +1,351 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-pink: #ffb6c1;
+  --secondary-pink: #ff69b4;
+  --dark-pink: #db7093;
+  --light-bg: #fff0f5;
+  --lighter-bg: #fff9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--light-bg);
+  color: #4a4a4a;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--lighter-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--dark-pink);
+  letter-spacing: 0.5px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--dark-pink);
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: var(--secondary-pink);
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(to right, #fff9fa, #ffebee);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+  min-width: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.slide-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 2px solid #ffe9f0;
+}
+
+.caption-overlay {
+  position: absolute;
+  bottom: 65px;
+  left: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--dark-pink);
+  padding: 10px 20px;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  border: 1px solid #ffccd5;
+}
+
+.price-overlay {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: rgba(255, 105, 180, 0.9);
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 22px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid #ff85a2;
+}
+
+#cakes {
+  background: var(--lighter-bg);
+}
+
+.cake-full {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 30px;
+  border-bottom: 1px solid #ffd6e0;
+}
+
+.cake-image img {
+  width: 50vw;
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  border: 3px solid white;
+}
+
+.cake-details {
+  width: 40vw;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2);
+}
+
+.cake-details h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 25px;
+  color: var(--dark-pink);
+}
+
+.cake-details p {
+  font-size: 1.125rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+button {
+  background: var(--secondary-pink);
+  border: none;
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+}
+
+button:hover {
+  background: var(--dark-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
+}
+
+#orderModal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 214, 224, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--lighter-bg);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(219, 112, 147, 0.3);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #ffccd5;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: var(--dark-pink);
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: 1px solid #f6a5c0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+.modal-content button {
+  background: var(--dark-pink);
+  color: #fff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.modal-content button:hover {
+  background: #b42457;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--dark-pink);
+}
+
+.close-button:hover {
+  color: #b42457;
+}
+
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  z-index: 100;
+  font-size: 24px;
+  background: var(--secondary-pink);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+#backToTopBtn:hover {
+  background: var(--dark-pink);
+}
+
+#adminBtn {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 100;
+  background: var(--dark-pink);
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: background 0.3s;
+}
+
+#adminBtn:hover {
+  background: #b42457;
+}
+
+.site-footer {
+  background-color: var(--lighter-bg);
+  color: #555;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 2px solid #ffccd5;
+}
+
+.site-footer .footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.site-footer .footer-content p {
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.site-footer .footer-content p strong {
+  color: var(--dark-pink);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navbar ul {
+    gap: 15px;
+  }
+  
+  .cake-full {
+    flex-direction: column;
+    padding: 30px;
+    height: auto;
+  }
+  
+  .cake-image img,
+  .cake-details {
+    width: 100%;
+    max-height: none;
+  }
+  
+  .slide-item img {
+    height: 300px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}

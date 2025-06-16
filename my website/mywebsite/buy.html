@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Place Order | Pipit Patisserie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="admin.php">Admin</a>
+  </nav>
+
+  <h1>Place Your Order</h1>
+  <div id="order-details"></div>
+
+  <form method="POST" action="data.php">
+    <input type="hidden" id="cakeName" name="cakeName">
+    <input type="hidden" id="cakePrice" name="cakePrice">
+
+    <label>Buyer's Name:</label><br>
+    <input type="text" name="buyerName" required><br><br>
+
+    <label>Credit Card Number:</label><br>
+    <input type="text" name="cardNumber" maxlength="16" required><br><br>
+
+    <label>CVV:</label><br>
+    <input type="text" name="cvv" maxlength="3" required><br><br>
+
+    <label>Expiration Date:</label><br>
+    <input type="month" name="expDate" required><br><br>
+
+    <button class="button" type="submit">Place Order</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const price = params.get('price');
+
+    document.getElementById('order-details').innerHTML = `
+      <h2>${name}</h2>
+      <p>Price: RM ${price}</p>
+    `;
+    document.getElementById('cakeName').value = name;
+    document.getElementById('cakePrice').value = price;
+  </script>
+</body>
+</html>

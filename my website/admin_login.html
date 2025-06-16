@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login - Pipit Patisserie</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+    .login-container input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .login-container button {
+      padding: 10px 25px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Admin Login</h2>
+  <input type="password" id="adminPassword" placeholder="Enter Password">
+  <br>
+  <button onclick="checkPassword()">Login</button>
+  <p id="errorMsg" class="error-message"></p>
+</div>
+
+<script>
+  function checkPassword() {
+    const password = document.getElementById("adminPassword").value;
+    const correctPassword = "123"; // 👈 you can change this to whatever you want
+
+    if (password === correctPassword) {
+      window.location.href = "admin.php";
+    } else {
+      document.getElementById("errorMsg").textContent = "Incorrect password. Try again.";
+    }
+  }
+</script>
+
+</body>
+</html>
